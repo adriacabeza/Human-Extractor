@@ -1,5 +1,6 @@
-tensorflow-gpu
-tensorflow
+matplotlib
+tensorflow-gpu==2.0.0-beta1
+tensorflow==2.0.0-beta1
 Pillow
 numpy setuptools
 wheel
