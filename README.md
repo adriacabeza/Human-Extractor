@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Unnamed/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Unnamed/network/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Unnamed.svg)](https://github.com/adriacabeza/Unnamed)
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/adriacabeza/Unnamed) ![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)
+
 
 # UNNAMED
 
@@ -23,10 +23,15 @@ Its main parts are:
 - **U-NET Generator**: the generator in pix2pix resembles an auto-encoder. It takes the     image to be translated and compresses it into a low-dimensional, "Bottleneck", vector representat    ion and then the Generator then learns how to upsample it into the output image.
 
 The U-NET generator is similar to ResNets in the way the information from earlier layers are integrated in the later layers: we have skip connections from the outputs of the encoder-hald of the network to the other decoder-half. By including this information we prevent the middle of the network to become an information bottleneck. Moreover, tose skip connections are also interesting because they do not require any resizing, projections, etc, since the spatial resolution of the layers being connected already match each other.
-![](docs/U-net.png)
+ <p align="center">
+  <img src="docs/U-net.png">
+</p>
 
  - **PatchGAN Discriminator**: instead of taking all the image and trying to classify whether is real or fake, this discriminator classifies individual different patches of the image. This is a way to enforce more contraints that encourage sharp high-frequency details. Also it runs faster than classifying the entire image since it only classifies tiny patches it has less parameters.
-![](docs/patch_gan.png)
+ <p align="center">
+  <img src="docs/patch_gan.png">
+</p>
+
 
 ## Dataset
 
