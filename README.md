@@ -17,7 +17,7 @@ This code was made public to share our research for the benefit of the scientifi
 pip install -r requirements.txt
 ```
 ## Architecture
-This repository is based on **pix2pix** architecture by Isola et al. In this architecture we take as input the actual image *x* that we want to *translate* into another structurally similar image $y$. Our generator now has to produce $G(x)$ which we want to be indistinguishable from **y**.
+This repository is based on **pix2pix** architecture by Isola et al. In this architecture we take as input the actual image *x* that we want to **translate** into another structurally similar image *y*. Our generator *G* now has to produce *G(x)* which we want to be indistinguishable from *y* for our discriminator *D*.
 
 Its main parts are:
 - **U-NET Generator**: the generator in pix2pix resembles an auto-encoder. It takes the     image to be translated and compresses it into a low-dimensional, "Bottleneck", vector representat    ion and then the Generator then learns how to upsample it into the output image.
