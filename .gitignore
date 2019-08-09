@@ -1,3 +1,14 @@
+# Media files
+/images
+!/images/.keep
+/out
+!/out/.keep
+/cropped
+!/cropped/.keep
+/data
+!/data/.keep
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
