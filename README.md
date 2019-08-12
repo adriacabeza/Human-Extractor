@@ -7,11 +7,13 @@
 
 # UNNAMED
 
-This code was made public to share our research for the benefit of the scientific community. Do NOT use it for immoral purposes. 
+Similar things have been tried in models like BodyPix (https://medium.com/tensorflow/introducing-bodypix-real-time-person-segmentation-in-the-browser-with-tensorflow-js-f1948126c2a0) which it uses a MobileNet network or (FICAR EL GITHUB AMB LES U-NETS)
+
 
 ## Prerequisites
-- Tensorflow 2.0
-- Install requirements.txt
+This project is built using the Tensorflow framework. I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) I though that in tensorflow everything would be easier.
+
+- To install all the requirements please use the requirements.txt
 
 ```bash
 pip install -r requirements.txt
@@ -34,8 +36,9 @@ The U-NET generator is similar to ResNets in the way the information from earlie
 
 
 ## Dataset
+The images were taken from the [OCHuman dataset](https://github.com/liruilong940607/OCHumanApi) proposed in Pose2Seg.
 
-We need to prepare our dataset. Each X/Y pair of images must be blended in half of the full image in the set.
+Firstly, we need to prepare our dataset. Each X/Y pair of images must be blended in half of the full image in the set.
 
 ## Run
 
