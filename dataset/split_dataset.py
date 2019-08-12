@@ -1,7 +1,7 @@
 import os
 import argparse
 
-SPLIT = 0.8
+SPLIT = 0.95
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--directory', type=str, default='data/original')

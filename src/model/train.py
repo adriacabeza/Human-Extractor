@@ -19,20 +19,22 @@ parser.add_argument('--dataset', type=str)
 #parser.add_argument('--device', type=str, default="0,1")
 args = parser.parse_args()
 
+# MODELS 
 generator = Generator()
 discriminator = Discriminator()
 
+# OPTIMIZER
 generator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
 discriminator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
 
-
+# CHECKPOINTS
 checkpoint_dir = './training_checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator_optimizer=discriminator_optimizer,
                                  generator=generator, discriminator=discriminator)
 
-
+# DATASET
 train_dataset = tf.data.Dataset.list_files(args.dataset+'train/*.jpg')
 train_dataset = train_dataset.shuffle(BUFFER_SIZE)
 train_dataset = train_dataset.map(load_image,
@@ -66,6 +68,8 @@ def train_step(input_image, target):
 
 
 def train(dataset, epochs):
+    # TENSORBOARDº
+    tf.contrib.summary.create_file_writer('log')
     for epoch in range(epochs):
         start = time.time()
 

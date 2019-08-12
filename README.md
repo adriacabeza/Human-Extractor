@@ -5,10 +5,8 @@
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Unnamed.svg)](https://github.com/adriacabeza/Unnamed)
 
 
-# UNNAMED
-
-Similar things have been tried in models like BodyPix (https://medium.com/tensorflow/introducing-bodypix-real-time-person-segmentation-in-the-browser-with-tensorflow-js-f1948126c2a0) which it uses a MobileNet network or (FICAR EL GITHUB AMB LES U-NETS)
-
+# HUMAN EXTRACTOR
+This tool is able to extract only the human of a picture. It is supposed to take as an input an image with a person and output the same image but just with the person cut it out. 
 
 ## Prerequisites
 This project is built using the Tensorflow framework. I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) I though that in tensorflow everything would be easier.
@@ -38,7 +36,14 @@ The U-NET generator is similar to ResNets in the way the information from earlie
 ## Dataset
 The images were taken from the [OCHuman dataset](https://github.com/liruilong940607/OCHumanApi) proposed in Pose2Seg.
 
-Firstly, we need to prepare our dataset. Each X/Y pair of images must be blended in half of the full image in the set.
+Firstly, we need to prepare our dataset. Each X/Y pair of images must be blended in half of the full image in the set. For this we need to put our normal images in the ```data/original```folder and our segmentated images in the ```data/segmentated```. Then type:
+
+```
+python3 dataset/combine_images.py  
+python3 split_dataset.py
+```
+
+After that we will have two folders ```train```and ```test```with the prepared data to train.
 
 ## Run
 
@@ -46,4 +51,6 @@ Firstly, we need to prepare our dataset. Each X/Y pair of images must be blended
 python3 -m src.train --dataset PATH_TO_DATASET
 ```
 
+## Improvements
 
+The dataset was really small (about X images) so a good improvement could be to increase the dataset to see if the model improves its performance. Also, pix2pixHD improvements by Nvidia could be applied in order to output sharper and more define images. 
