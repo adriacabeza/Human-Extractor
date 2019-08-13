@@ -20,9 +20,9 @@ pip install -r requirements.txt
 This repository is based on **pix2pix** architecture by Isola et al. In this architecture we take as input the actual image *x* that we want to **translate** into another structurally similar image *y*. Our generator *G* now has to produce *G(x)* which we want to be indistinguishable from *y* for our discriminator *D*.
 
 Its main parts are:
-- **U-NET Generator**: the generator in pix2pix resembles an auto-encoder. It takes the     image to be translated and compresses it into a low-dimensional, "Bottleneck", vector representat    ion and then the Generator then learns how to upsample it into the output image.
+- **U-NET Generator**: the generator in pix2pix resembles an auto-encoder. It takes the image to be translated and compresses it into a low-dimensional, "Bottleneck", vector representation and then the Generator then learns how to upsample it into the output image.
 
-The U-NET generator is similar to ResNets in the way the information from earlier layers are integrated in the later layers: we have skip connections from the outputs of the encoder-hald of the network to the other decoder-half. By including this information we prevent the middle of the network to become an information bottleneck. Moreover, tose skip connections are also interesting because they do not require any resizing, projections, etc, since the spatial resolution of the layers being connected already match each other.
+The U-NET generator is similar to ResNets in the way the information from earlier layers are integrated in the later layers: we have skip connections from the outputs of the encoder-half of the network to the other decoder-half. By including this information we prevent the middle of the network to become an information bottleneck. Moreover, those skip connections are also interesting because they do not require any resizing, projections, etc, since the spatial resolution of the layers being connected already match each other.
  <p align="center">
   <img src="docs/U-net.png">
 </p>
