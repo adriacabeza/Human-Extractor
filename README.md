@@ -8,14 +8,15 @@
 # HUMAN EXTRACTOR
 This tool is able to extract only the human of a picture. It is supposed to take as an input an image with a person and output the same image but just with the person cut it out. 
 
+This project is built using the Tensorflow framework, more precisely, it is done using Tensorflow 2.0 and its eager execution. Why? Well, I was kinda curious about it (Tensorflow without building graphs!) and I took this project as an excuse to learn about it. Moreover, I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) and I though that in tensorflow everything would be easier.
+
 ## Prerequisites
-This project is built using the Tensorflow framework. I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) I though that in tensorflow everything would be easier.
-
 - To install all the requirements please use the requirements.txt
-
 ```bash
 pip install -r requirements.txt
 ```
+- If you want to use Google Collab, use this **[Jupyter Notebook]()**. Remember that you will need to prepare the dataset.
+
 ## Architecture
 This repository is based on **pix2pix** architecture by Isola et al. In this architecture we take as input the actual image *x* that we want to **translate** into another structurally similar image *y*. Our generator *G* now has to produce *G(x)* which we want to be indistinguishable from *y* for our discriminator *D*.
 
@@ -34,7 +35,7 @@ The U-NET generator is similar to ResNets in the way the information from earlie
 
 
 ## Dataset
-The images were taken from the [OCHuman dataset](https://github.com/liruilong940607/OCHumanApi) proposed in Pose2Seg.
+The images were taken from the [Supervisely Person dataset](https://hackernoon.com/releasing-supervisely-person-dataset-for-teaching-machines-to-segment-humans-1f1fc1f28469).
 
 Firstly, we need to prepare our dataset. Each X/Y pair of images must be blended in half of the full image in the set. For this we need to put our normal images in the ```data/original```folder and our segmentated images in the ```data/segmentated```. Then type:
 
@@ -43,7 +44,7 @@ python3 dataset/combine_images.py
 python3 split_dataset.py
 ```
 
-After that we will have two folders ```train```and ```test```with the prepared data to train.
+After that we will have two folders ```train```and ```test```with the prepared data to train. Remember that if you are using **Google Colab** you should upload those folders. 
 
 ## Run
 
