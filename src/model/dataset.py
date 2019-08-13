@@ -1,6 +1,6 @@
-import os
 import tensorflow as tf
-from src import IMG_WIDTH, IMG_HEIGHT
+
+from src.model import IMG_WIDTH, IMG_HEIGHT
 
 
 def load(image_file):
@@ -42,7 +42,7 @@ def normalize(input_image, real_image):
 
 def load_image(image_file):
 	input_image, real_image = load(image_file)
-	input_image, real_image = resize(input_image, real_image)
+	input_image, real_image = resize(input_image, real_image, IMG_HEIGHT, IMG_WIDTH)
 	input_image, real_image = normalize(input_image, real_image)
 
 	return input_image, real_image

@@ -1,5 +1,5 @@
-import os
 import argparse
+import os
 
 SPLIT = 0.95
 

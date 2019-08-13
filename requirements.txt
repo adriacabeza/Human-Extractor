@@ -1,7 +1,6 @@
 opencv-python
 matplotlib
-tensorflow
-tensorflow-gpu
+tensorflow==2.0.0-beta1
 Pillow
 numpy
 setuptools

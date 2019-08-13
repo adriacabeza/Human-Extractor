@@ -8,7 +8,7 @@ def generate_images(model, test_input, tar):
     # the accumulated statistics learned from the training dataset
     # (which we don't want)
     prediction = model(test_input, training=True)
-    plt.figure(figsize=(15,15))
+    plt.figure(figsize=(15, 15))
 
     display_list = [test_input[0], tar[0], prediction[0]]
     title = ['Input Image', 'Ground Truth', 'Predicted Image']

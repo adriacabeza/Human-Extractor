@@ -44,7 +44,7 @@ python3 dataset/combine_images.py
 python3 split_dataset.py
 ```
 
-After that we will have two folders ```train```and ```test```with the prepared data to train. Remember that if you are using **Google Colab** you should upload those folders. 
+After that we will have two folders ```train```and ```test```with the prepared data to train. Remember that if you are using **Google Colab** you should upload those folders in a folder called ```dataset```. 
 
 ## Run
 
@@ -54,4 +54,4 @@ python3 -m src.train --dataset PATH_TO_DATASET
 
 ## Improvements
 
-The dataset was really small (about X images) so a good improvement could be to increase the dataset to see if the model improves its performance. Also, pix2pixHD improvements by Nvidia could be applied in order to output sharper and more define images. 
+The dataset was really small (about X images) so a good improvement could be to increase the dataset to see if the model improves its performance. Also, pix2pixHD improvements by Nvidia could be applied in order to output sharper and more define images. Actually, my first choice was to try to implement it in Tensorflow since the only implementation I have found is the original one in Pytorch, but after reading the paper I decided that it was too difficult for a person who does not even have a proper GPU: 3 different discriminators with different scales, feature matching loss using features from each discriminator and two different generators, the local enhancer and the global network who must be trained separately and then fine-tuned together.

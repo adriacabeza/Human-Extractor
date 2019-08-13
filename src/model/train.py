@@ -1,22 +1,22 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-import time
 import argparse
-import tensorflow as tf
+import os
+import time
 
-from src import BUFFER_SIZE
-from src.model import *
-from src.utils import generate_images
-from src.dataset import *
+from src.model import BUFFER_SIZE
+from src.model.dataset import *
+from src.model.model import *
+from src.model.utils import generate_images
 
 # ONCE YOU HAVE AN IDEA CHECK https://github.com/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/pix2pix.ipynb
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=100)
 parser.add_argument('--batch', type=int, default=8)
-#parser.add_argument('--generator', type=str)
+# parser.add_argument('--generator', type=str)
 parser.add_argument('--dataset', type=str)
-#parser.add_argument('--device', type=str, default="0,1")
+# parser.add_argument('--device', type=str, default="0,1")
 args = parser.parse_args()
 
 # MODELS 
@@ -68,8 +68,8 @@ def train_step(input_image, target):
 
 
 def train(dataset, epochs):
-    # TENSORBOARDº
-    tf.contrib.summary.create_file_writer('log')
+    # TENSORBOARD
+    # tf.contrib.summary.create_file_writer('log')
     for epoch in range(epochs):
         start = time.time()
 
