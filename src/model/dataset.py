@@ -9,8 +9,8 @@ def load(image_file):
 	w = tf.shape(image)[1]
 
 	w = w // 2
-	real_image = image[:, :w, :]
-	input_image = image[:, w:, :]
+	input_image = image[:, :w, :]
+	real_image = image[:, w:, :]
 
 	input_image = tf.cast(input_image, tf.float32)
 	real_image = tf.cast(real_image, tf.float32)

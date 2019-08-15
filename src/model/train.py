@@ -4,6 +4,7 @@ import argparse
 import os
 import time
 
+from tqdm import tqdm
 from src.model import BUFFER_SIZE
 from src.model.dataset import *
 from src.model.model import *
@@ -28,6 +29,8 @@ generator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
 discriminator_optimizer = tf.keras.optimizers.Adam(2e-4, beta_1=0.5)
 
 # CHECKPOINTS
+if not os.path.exists('./training_checkpoints'):
+    os.makedirs('./training_checkpoints')
 checkpoint_dir = './training_checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
@@ -73,10 +76,10 @@ def train(dataset, epochs):
     for epoch in range(epochs):
         start = time.time()
 
-        for input_image, target in dataset:
+        for input_image, target in tqdm(dataset):
             train_step(input_image, target)
 
-        for inp, tar in test_dataset.take(1):
+        for inp, tar in test_dataset.take(5):
             generate_images(generator, inp, tar)
 
         # saving (checkpoint) the model every 20 epochs
