@@ -58,9 +58,9 @@ Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data pr
 ## Ejecutarlo
 
 ```bash
-python3 -m src.train --dataset PATH_TO_DATASET
+python3 -m model.train --dataset PATH_TO_DATASET
 ```
 
-## Improvements
+## Mejoras
 
 El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante depués de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc. 

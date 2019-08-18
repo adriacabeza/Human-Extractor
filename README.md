@@ -7,7 +7,7 @@
 
 
 # HUMAN EXTRACTOR
-[Spanish](README-es.md)
+
 This tool is able to extract only the human of a picture. It is supposed to take as an input an image with a person and output the same image but just with the person cut it out. 
 
 This project is built using the Tensorflow framework, more precisely, it is done using Tensorflow 2.0 and its eager execution. Why? Well, I was kinda curious about it (Tensorflow without building graphs!) and I took this project as an excuse to learn about it. Moreover, I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) and I though that in tensorflow everything would be easier. 
@@ -53,9 +53,12 @@ After that we will have two folders ```train```and ```test```with the prepared d
 ## Run
 
 ```bash
-python3 -m src.train --dataset PATH_TO_DATASET
+python3 -m model.train --dataset PATH_TO_DATASET
 ```
 
 ## Improvements
 
 The dataset was really small (about X images) so a good improvement could be to increase the dataset to see if the model improves its performance. Also, pix2pixHD improvements by Nvidia could be applied in order to output sharper and more define images. Actually, my first choice was to try to implement it in Tensorflow since the only implementation I have found is the original one in Pytorch, but after reading the paper I decided that it was too difficult for a person who does not even have a proper GPU: 3 different discriminators with different scales, feature matching loss using features from each discriminator and two different generators, the local enhancer and the global network who must be trained separately and then fine-tuned together.
+
+
+- [README en español](README-es.md)
