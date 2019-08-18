@@ -15,6 +15,19 @@ El framework que he escogido era Tensorflow 2.0 ya que quería aprender acerca d
 Nótese que pese a que el proyecto se ha realizado principalmente en Colab también está preparado para runnearlo en local con sus diferentes ficheros y módulos, no obstante aún no lo he podido probar. 
 
 
+## Resultados
+
+Después de 150 epochs de X imágenes.
+
+| Original | Output |
+|----------|--------|
+|![](docs/original0.png)          |![](docs/output0.png)        |
+|![](docs/original1.png)          |![](docs/output1.png)        |
+|![](docs/original2.png)          |![](docs/output2.png)        |
+|![](docs/original3.png)          |![](docs/output3.png)        |
+
+
+
 ## Requisitos
 - Para instalar los requisitos necesarios porfavor usa el archivo requirements.txt
 ```bash
@@ -53,7 +66,7 @@ Para hacerlo podemos usar clonar el repositorio y poner nuestras imágenes norma
 python3 dataset/combine_images.py  
 python3 split_dataset.py
 ```
-Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data preparada. Recuerda que si usas Colab tienes que subir las carpetas de alguna forma.  
+Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data preparada. Recuerda que si usas Colab tienes que subir las carpetas de alguna forma y poner su ruta en la variable *PATH*.
 
 ## Ejecutarlo
 
