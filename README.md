@@ -19,7 +19,7 @@ Notice please that even though the project was mainly done using **Google Colab*
 ```bash
 pip install -r requirements.txt
 ```
-- If you want to use Google Collab, use this **[Jupyter Notebook]()**. Remember that you will need to prepare the dataset.
+- If you want to use Google Collab, use this **[Jupyter Notebook](Human_extractor.ipynb)**. Remember that you will need to prepare the dataset.
 
 ## Architecture
 This repository is based on **pix2pix** architecture by Isola et al. In this architecture we take as input the actual image *x* that we want to **translate** into another structurally similar image *y*. Our generator *G* now has to produce *G(x)* which we want to be indistinguishable from *y* for our discriminator *D*.

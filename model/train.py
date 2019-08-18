@@ -5,10 +5,10 @@ import os
 import time
 
 from tqdm import tqdm
-from src.model import BUFFER_SIZE
-from src.model.dataset import *
-from src.model.model import *
-from src.model.utils import generate_images
+from model import BUFFER_SIZE
+from model.dataset import *
+from model.model import *
+from model.utils import generate_images
 
 # ONCE YOU HAVE AN IDEA CHECK https://github.com/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/pix2pix.ipynb
 

@@ -20,7 +20,7 @@ Nótese que pese a que el proyecto se ha realizado principalmente en Colab tambi
 ```bash
 pip install -r requirements.txt
 ```
-- Sí prefieres usar Google Collab, usa este **[link]()**. Recuerda que tienes que preparar el dataset previamente. 
+- Sí prefieres usar Google Collab, usa este **[link](Human_extractor.ipynb)**. Recuerda que tienes que preparar el dataset previamente. 
 
 ## Arquitectura pix2pix
 

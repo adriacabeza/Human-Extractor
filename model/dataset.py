@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from src.model import IMG_WIDTH, IMG_HEIGHT
+from model import IMG_WIDTH, IMG_HEIGHT
 
 
 def load(image_file):

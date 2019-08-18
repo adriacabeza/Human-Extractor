@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-from src.model import LAMBDA, OUTPUT_CHANNELS
+from model import LAMBDA, OUTPUT_CHANNELS
 
 loss_object = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
