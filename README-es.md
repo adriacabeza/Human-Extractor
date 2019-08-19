@@ -8,7 +8,7 @@
 
 # HUMAN EXTRACTOR
 
-Este proyecto se ha hecho con el fin de participar en el #RetoDotCSV2080Super. La finalidad del proyecto es poder segmentar a los humanos usando una pix2pix, así la gente que no tenga Photoshop (o otros) o que no sepa usarlo podrá coger sus imágenes y recortarse con facilidad.
+La finalidad del proyecto es poder segmentar a los humanos usando una pix2pix, así la gente que no tenga Photoshop (o otros) o que no sepa usarlo podrá coger sus imágenes y recortarse con facilidad.
 
 El framework que he escogido era Tensorflow 2.0 ya que quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
 
@@ -17,14 +17,14 @@ Nótese que pese a que el proyecto se ha realizado principalmente en Colab tambi
 
 ## Resultados
 
-Después de 150 epochs de X imágenes.
+Después de 150 epochs de 3035 imágenes.
 
-| Original | Output |
-|----------|--------|
-|![](docs/original0.png)          |![](docs/output0.png)        |
-|![](docs/original1.png)          |![](docs/output1.png)        |
-|![](docs/original2.png)          |![](docs/output2.png)        |
-|![](docs/original3.png)          |![](docs/output3.png)        |
+| Original | Ground Truth | Output |
+|----------|--------------|--------|
+| ![](docs/original0.png)           |  ![](docs/ground0.png)            |   ![](docs/output0.png)     |
+| ![](docs/original1.png)           |  ![](docs/ground1.png)            |   ![](docs/output1.png)     |
+| ![](docs/original2.png)           |  ![](docs/ground2.png)            |   ![](docs/output2.png)     |
+| ![](docs/original3.png)           |  ![](docs/ground3.png)            |   ![](docs/output3.png)     |
 
 
 
