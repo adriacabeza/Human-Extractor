@@ -19,12 +19,13 @@ Nótese que pese a que el proyecto se ha realizado principalmente en Colab tambi
 
 Después de 150 epochs de 3035 imágenes.
 
-| Output |
+| Resultados |
 |--------|
 |   ![](docs/output.png)     |
 |   ![](docs/output_1.png)    |
 |   ![](docs/output_2.png)    |
 |   ![](docs/output_3.png)    |
+|   ![](docs/output_4.png)    |
 
 
 
