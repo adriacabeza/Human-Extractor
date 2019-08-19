@@ -19,12 +19,12 @@ Nótese que pese a que el proyecto se ha realizado principalmente en Colab tambi
 
 Después de 150 epochs de 3035 imágenes.
 
-| Original | Ground Truth | Output |
-|----------|--------------|--------|
-| ![](docs/original0.png)           |  ![](docs/ground0.png)            |   ![](docs/output0.png)     |
-| ![](docs/original1.png)           |  ![](docs/ground1.png)            |   ![](docs/output1.png)     |
-| ![](docs/original2.png)           |  ![](docs/ground2.png)            |   ![](docs/output2.png)     |
-| ![](docs/original3.png)           |  ![](docs/ground3.png)            |   ![](docs/output3.png)     |
+| Output |
+|--------|
+|   ![](docs/output.png)     |
+|   ![](docs/output_1.png)    |
+|   ![](docs/output_2.png)    |
+|   ![](docs/output_3.png)    |
 
 
 
