@@ -1,11 +1,12 @@
 body {
+    padding: 2rem;
     background:
-radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,0.12) 21%, rgba(255, 255, 255, 0.12) 34%, transparent 35%, transparent),
-radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,0.12) 21%, rgba(255,255,255,0.12) 34%, transparent 35%, transparent) 0 -50px;
-background-color:#5CDB95; /*  #2576d1; */
-background-size:75px 100px;
-
+      radial-gradient(circle at 100% 50%, transparent 20%, rgba(255,255,255,0.12) 21%, rgba(255, 255, 255, 0.12) 34%, transparent 35%, transparent),
+      radial-gradient(circle at 0% 50%, transparent 20%, rgba(255,255,255,0.12) 21%, rgba(255,255,255,0.12) 34%, transparent 35%, transparent) 0 -50px;
+      background-color:#5CDB95; /*  #2576d1; */
+      background-size:75px 100px;
 }
+
 h1 {
     font-size:7vh; 
     font-family:'Lexend Deca', sans-serif;
@@ -13,12 +14,11 @@ h1 {
     color:#EDF5E1;
 }
 
-div.column{
-    flex:50%;
-    padding:35px;
-}
+
 div.row{
     display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 p{
@@ -31,7 +31,7 @@ p{
 
 button {
     font-family:'Lexend Deca', sans-serif;
-     font-size:2vh;
+     font-size:2.5vh;
     color: #EDF5E1;
     background: #379683;
     border:none;
@@ -95,74 +95,77 @@ body {
   .btn:focus {
     outline: 2px dotted #55d7dc;
   }
-  
 
-  .loader,
-  .loader:before,
-  .loader:after {
-    border-radius: 50%;
+  .lds-grid--hidden {
+    display:none
   }
-  .loader {
-    color: #ffffff;
-    visibility: hidden;
-    font-size: 11px;
-    text-indent: -99999em;
-    margin: 55px auto;
+
+  .lds-grid {
+    display: block;
     position: relative;
-    width: 10em;
-    height: 10em;
-    box-shadow: inset 0 0 0 1em;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
+    width: 64px;
+    height: 64px;
+    margin:0 auto;
   }
-  .loader:before,
-  .loader:after {
+  .lds-grid div {
     position: absolute;
-    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation: lds-grid 1.2s linear infinite;
   }
-  .loader:before {
-    width: 5.2em;
-    height: 10.2em;
-    background: #0dc5c1;
-    border-radius: 10.2em 0 0 10.2em;
-    top: -0.1em;
-    left: -0.1em;
-    -webkit-transform-origin: 5.2em 5.1em;
-    transform-origin: 5.2em 5.1em;
-    -webkit-animation: load2 2s infinite ease 1.5s;
-    animation: load2 2s infinite ease 1.5s;
+  .lds-grid div:nth-child(1) {
+    top: 6px;
+    left: 6px;
+    animation-delay: 0s;
   }
-  .loader:after {
-    width: 5.2em;
-    height: 10.2em;
-    background: #0dc5c1;
-    border-radius: 0 10.2em 10.2em 0;
-    top: -0.1em;
-    left: 5.1em;
-    -webkit-transform-origin: 0px 5.1em;
-    transform-origin: 0px 5.1em;
-    -webkit-animation: load2 2s infinite ease;
-    animation: load2 2s infinite ease;
+  .lds-grid div:nth-child(2) {
+    top: 6px;
+    left: 26px;
+    animation-delay: -0.4s;
   }
-  @-webkit-keyframes load2 {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
+  .lds-grid div:nth-child(3) {
+    top: 6px;
+    left: 45px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(4) {
+    top: 26px;
+    left: 6px;
+    animation-delay: -0.4s;
+  }
+  .lds-grid div:nth-child(5) {
+    top: 26px;
+    left: 26px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(6) {
+    top: 26px;
+    left: 45px;
+    animation-delay: -1.2s;
+  }
+  .lds-grid div:nth-child(7) {
+    top: 45px;
+    left: 6px;
+    animation-delay: -0.8s;
+  }
+  .lds-grid div:nth-child(8) {
+    top: 45px;
+    left: 26px;
+    animation-delay: -1.2s;
+  }
+  .lds-grid div:nth-child(9) {
+    top: 45px;
+    left: 45px;
+    animation-delay: -1.6s;
+  }
+  @keyframes lds-grid {
+    0%, 100% {
+      opacity: 1;
     }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes load2 {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
+    50% {
+      opacity: 0.5;
     }
   }
   

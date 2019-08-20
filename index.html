@@ -20,20 +20,22 @@
   <h1> HUMAN EXTRACTOR </h1>
   <p>Sube una imagen y mira como desaparece el fondo.</p>
   <div class="row">
-    <div class="column">
-      <img src="assets/original.jpg" alt="Original" style="width:100%">
-    </div>
-    <div class="column">
-      <img src="assets/original.jpg" alt="Output" style="width:100%">
-    </div>
+   
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:90vh; padding:10px;">
+    
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Output" style="width:90vh;padding:10px;">
+    
   </div>
-  <div style=" display: flex;justify-content: center; " id = "boton">
+
+  <div style=" display: flex;justify-content: center;padding-top:20px; " id = "boton">
     <input id="file" type="file" style="display: none;" />
     <button class="btn draw-border"   value="Upload" onclick="thisFileUpload();">
       Upload an Image
     </button>
   </div>
-  <div class="loader" id="loader">Loading...</div>
+
+  <div class="lds-grid--hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
 </body>
 
 </html>

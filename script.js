@@ -6,8 +6,8 @@ function thisFileUpload() {
     if(file != null){
         button = document.getElementById("boton");
         button.style.visibility="hidden";
-        spinner = document.getElementById("loader");
-        spinner.style.visibility="visible";
+        spinner = document.getElementById("");
+        spinner.style.visibility="";
     }
 };
 
