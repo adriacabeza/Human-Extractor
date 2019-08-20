@@ -8,9 +8,11 @@
 
 # HUMAN EXTRACTOR
 
-This tool is able to extract only the human of a picture. It is supposed to take as an input an image with a person and output the same image but just with the person cut it out. 
+**This tool is able to extract only the human of a picture using a pix2pix architecture**. It is supposed to take as an input an image with a person and output the same image but just with the person cut it out. 
 
 This project is built using the Tensorflow framework, more precisely, it is done using Tensorflow 2.0 and its eager execution. Why? Well, I was kinda curious about it (Tensorflow without building graphs!) and I took this project as an excuse to learn about it. Moreover, I decided Tensorflow over another frameworks since I wanted to train on **Google Colab** (not everybody has incredible GPUs at home tho) and I though that in tensorflow everything would be easier. 
+
+To tackle this problem the first ways that would come to mind would be a Mask RCNN or even Salency Maps but I wanted to try the approach using a pix2pix. 
 
 Notice please that even though the project was mainly done using **Google Colab** and a notebook there is a project too with its separate files and modules. However it has not been proved.
 
