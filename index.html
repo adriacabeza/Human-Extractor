@@ -10,6 +10,7 @@
   <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
   <link rel="shortcut icon" type="image/png"
     href="https://www.pinclipart.com/picdir/middle/4-43309_head-silhouette-cliparts-man-head-silhouette-png-download.png" />
 </head>
@@ -21,9 +22,9 @@
   <p>Sube una imagen y mira como desaparece el fondo.</p>
   <div class="row">
    
-      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:90vh; padding:10px;">
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:90vh; padding:10px;" id="original1">
     
-      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Output" style="width:90vh;padding:10px;">
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Output" style="width:90vh;padding:10px;" id="original2">
     
   </div>
 
@@ -34,7 +35,7 @@
     </button>
   </div>
 
-  <div class="lds-grid--hidden"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="lds-grid--hidden" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
 </body>
 
