@@ -18,7 +18,7 @@ Notice please that even though the project was mainly done using **Google Colab*
 
 ## Result
 
-After 100 epochs of 3035 images this are some of the results: 
+After 200 epochs of 3035 images this are some of the results: 
 
 | Results |
 |--------|

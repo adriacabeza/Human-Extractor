@@ -12,14 +12,14 @@ La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix*
 
 En lo primero que hubiera pensado para atacar este problema hubiera sido provar otras maneras y arquitecturas como **Mask RCNN** o incluso **Salency Maps** pero quería provar el approach de la pix2pix.
 
-El framework que he escogido era Tensorflow 2.0 ya que quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
+El framework que he escogido era Tensorflow 2.0 ya su tutorial estaba en esa versión y quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
 
 Nótese que pese a que el proyecto se ha realizado principalmente en Colab también está preparado para runnearlo en local con sus diferentes ficheros y módulos, no obstante aún no lo he podido probar. 
 
 
 ## Resultados
 
-Después de 150 epochs de 3035 imágenes.
+Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha ido muy bien últimamente):
 
 | Resultados |
 |--------|
