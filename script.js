@@ -1,7 +1,6 @@
+const MODEL_URL = 'generator/model.json';
+const model = tf.loadGraphModel(MODEL_URL);
 
-const MODEL_URL = 'generator/generator.json';
-const model = await tf_converter.loadGraphModel(MODEL_URL);
-// await tf_converter.loadFrozenModel(MODEL_URL, WEIGHTS_URL)
 
 var file = null;
 
@@ -20,6 +19,10 @@ function thisFileUpload() {
 function run(){
 	if(model != null & file != null){
 		result= model.execute(tf.fromPixels(file))
+		spinner = document.getElementById("spinner");
+		spinner.className="lds-grid--hidden";
+		button = document.getElementById("boton");
+		button.style.visibility="visible";
 		document.getElementById("original1").src = file
 		document.getElementById("original2").src = result
 	}

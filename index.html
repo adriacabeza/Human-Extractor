@@ -7,10 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Human Extractor</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
   <link rel="shortcut icon" type="image/png"
     href="https://www.pinclipart.com/picdir/middle/4-43309_head-silhouette-cliparts-man-head-silhouette-png-download.png" />
 </head>
@@ -20,15 +18,8 @@
 
   <h1> HUMAN EXTRACTOR </h1>
   <p>Sube una imagen y mira como desaparece el fondo.</p>
-  <div class="row">
-   
-      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:90vh; padding:10px;" id="original1">
-    
-      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Output" style="width:90vh;padding:10px;" id="original2">
-    
-  </div>
 
-  <div style=" display: flex;justify-content: center;padding-top:20px; " id = "boton">
+  <div style=" display: flex;justify-content: center; padding-top:20px; padding-bottom:20px; " id = "boton">
     <input id="file" type="file" style="display: none;" />
     <button class="btn draw-border"   value="Upload" onclick="thisFileUpload();">
       Upload an Image
@@ -37,6 +28,47 @@
 
   <div class="lds-grid--hidden" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-</body>
 
+  <div class="row">
+   
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:90vh; padding:10px;" id="original1">
+    
+      <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Output" style="width:90vh;padding:10px;" id="original2">
+    
+  </div>
+</body>
+<script>
+
+const MODEL_URL = 'generator/model.json';
+const model = tf.loadGraphModel(MODEL_URL);
+var file = null;
+
+function thisFileUpload() {
+    file = document.getElementById("file").click(); 
+    sleep(5);    
+    upload();
+};
+
+function upload(){
+    if(file != null){
+        button = document.getElementById("boton");
+        button.style.visibility="hidden";
+        spinner = document.getElementById("spinner");
+        spinner.className="lds-grid";
+	      run()
+    }
+}
+function run(){
+	if(model != null & file != null){
+		result= model.execute(tf.browser.fromPixels(file))
+		spinner = document.getElementById("spinner");
+		spinner.className="lds-grid--hidden";
+		button = document.getElementById("boton");
+		button.style.visibility="visible";
+		document.getElementById("original1").src = file
+		document.getElementById("original2").src = result
+	}
+};
+
+</script>
 </html>
