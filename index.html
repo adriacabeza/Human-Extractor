@@ -44,8 +44,9 @@ const model = tf.loadGraphModel(MODEL_URL);
 var file = null;
 
 function thisFileUpload() {
-    file = document.getElementById("file").click(); 
-    sleep(5);    
+    document.getElementById("file").click(); 
+    sleep(1);    
+    file = document.getElementById("file");
     upload();
 };
 
