@@ -18,16 +18,15 @@
 
   <h1> HUMAN EXTRACTOR </h1>
   <p>Sube una imagen y mira como desaparece el fondo.</p>
-
-  <div style=" display: flex;justify-content: center; padding-top:20px; padding-bottom:20px; " id = "boton">
-    <input id="file" type="file" style="display: none;" />
+  <div class="lds-grid--hidden" id="spinner" style="padding-top:20px; padding-bottom:20px;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div style=" display: flex;justify-content: center; padding-top:20px; padding-bottom:20px;" id = "boton">
+    <input id="file" type="file" style="display: none;" onchange="upload(this.value)" />
     <button class="btn draw-border"   value="Upload" onclick="thisFileUpload();">
       Upload an Image
     </button>
   </div>
 
-  <div class="lds-grid--hidden" id="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-
+  
 
   <div class="row">
    
@@ -41,23 +40,23 @@
 
 const MODEL_URL = 'generator/model.json';
 const model = tf.loadGraphModel(MODEL_URL);
-var file = null;
 
 function thisFileUpload() {
     document.getElementById("file").click(); 
-    sleep(1);    
-    file = document.getElementById("file");
-    upload();
 };
 
-function upload(){
+function upload(file){
+    console.log(file);
     if(file != null){
         button = document.getElementById("boton");
         button.style.visibility="hidden";
+        button.style.padding="0";
+        button.style.display="none";
         spinner = document.getElementById("spinner");
         spinner.className="lds-grid";
-	      run()
+	      //run(file)
     }
+    
 }
 function run(){
 	if(model != null & file != null){
