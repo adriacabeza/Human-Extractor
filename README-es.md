@@ -94,7 +94,7 @@ El dataset es bastante pequeño así que podrían verse mejoras si se incrementa
 
 ## Demo
 
-Además quería aprender acerca de **tensorflowjs** así que he creado una página web simple para insertar el modelo y hacerlo más simple de provar. Haz click en el [link](adriacabeza.github.io/Human-Extractor) para provarlo. 
+Además quería aprender acerca de **tensorflowjs** así que he creado una página web simple para insertar el modelo y hacerlo más simple de provar. Haz click en el [link](https://adriacabeza.github.io/Human-Extractor/) para provarlo. 
 
 <p align="center">
 <img src="docs/website.png">

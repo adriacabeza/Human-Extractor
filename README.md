@@ -1,8 +1,7 @@
 [![HitCount](http://hits.dwyl.io/adriacabeza/Human-Extractor.svg)](http://hits.dwyl.io/adriacabeza/Human-Extractor)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/adriacabeza/Human-Extractor)
 [![GitHub stars](https://img.shields.io/github/stars/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Human-Extractor/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Human-Extractor/network/)
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Unnamed.svg)](https://github.com/adriacabeza/Human-Extractor)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Human-Extractor.svg)](https://github.com/adriacabeza/Human-Extractor)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 
@@ -90,7 +89,7 @@ python3 -m model.train --dataset PATH_TO_DATASET
 The dataset was kinda small (less than 5k images) so a good improvement could be to increase the dataset to see if the model improves its performance. Also, pix2pixHD improvements by Nvidia could be applied in order to output sharper and more define images. Actually, my first choice was to try to implement it in Tensorflow since the only implementation I have found is the original one in Pytorch, but after reading the paper I decided that it was too difficult for a person who does not even have a proper GPU: 3 different discriminators with different scales, feature matching loss using features from each discriminator and two different generators, the local enhancer and the global network who must be trained separately and then fine-tuned together.
 
 ## Demo 
-I wanted to learn about **tensorflowjs** too so I created a simple website to insert the model and make it simple for you to try it. Click the [link](adriacabeza.github.io/Human-Extractor) to try it out.
+I wanted to learn about **tensorflowjs** too so I created a simple website to insert the model and make it simple for you to try it. Click the [link](https://adriacabeza.github.io/Human-Extractor/) to try it out.
 
 
 <p align="center">
