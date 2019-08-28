@@ -28,20 +28,18 @@
   
   <div class="row">
     
-    <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="Original" style="width:512px;height:512px; padding:10px;" id="original1" crossorigin="anonymous"> 
+    <img src="docs/csv_original.png" alt="Original" style="object-fit: cover; width:512px;height:512px; padding:10px;" id="original1" crossorigin="anonymous"> 
     
-    <canvas id="original2" style="width:512px;height:512px; padding:10px;" crossorigin="anonymous" >
+    <canvas id="original2" style="width:512px;height:512px; padding:10px; object-fit: cover;" crossorigin="anonymous" >
     
   </div>
 </body>
 <script>
-//  var c = document.getElementById("original2");
-// var ctx = c.getContext("2d");
-
-// ctx.beginPath();
-// ctx.rect(0, 0, 512, 512);
-// ctx.fillStyle = "black";
-// ctx.fill();
+var c = document.getElementById("original2");
+var ctx = c.getContext("2d");
+var img = new Image;
+img.src = 'docs/csv_transparency.png';
+ctx.drawImage(img, 0,0);
 
   const MODEL_URL = 'output/model.json';
   
