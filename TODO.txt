@@ -1,4 +1,1 @@
-Try the --all option to get the output nodes and then convert it to tensorflow js.
-```saved_model_cli show -h --dir /generator --all```
-Try inference with the model.
-Make git lfs to upload model. 
+Re-train with 200 epochs, convert to tensorflow js, upload with git lfs the main model and its json version 
