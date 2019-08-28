@@ -71,7 +71,13 @@ python3 dataset/combine_images.py
 python3 split_dataset.py
 ```
 
-After that we will have two folders ```train```and ```test```with the prepared data to train. Remember that if you are using **Google Colab** you should upload those folders in a folder called ```prepared```. 
+After that we will have two folders ```train```and ```test```with the prepared data to train. Remember that if you are using **Google Colab** you should upload those folders in a folder called ```prepared```.
+
+Also, after running the model you will have a white-backgrounded image, if you need it with transparency please use [this script](./dataset/delete_white.py).
+
+```bash
+python3 delete_white.py --image image.jpg
+```
 
 ## Run
 
