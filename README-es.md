@@ -28,8 +28,12 @@ Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha
 |   ![](docs/output_2.png)    |
 |   ![](docs/output_5.png)    |
 |   ![](docs/output_6.png)    |
+|   ![](docs/output_7.png)    |
+|   ![](docs/output_8.png)    |
+|   ![](docs/output_9.png)    |
 |   ![](docs/output_3.png)    |
 |   ![](docs/output_4.png)    |
+|   ![](docs/output_10.png)    |
 
 
 
@@ -55,10 +59,6 @@ Sus partes principales son:
   <img src="docs/U-net.png">
 </p>
 
-```
-
-
-``
 - **Discriminador Patch-GAN**: en este discriminador en vez de coger las imágenes y clasificarlas en verdaderas o falsas, se clasifican individualmente diferentes trozos de la imagen así se refuerza el objetivo de conseguir detalles mucho más nítidos. Además es más rápido de clasificar toda una imágen ya que solo tiene que clasificar pequeños trozos y eso significa menos parámetros.
 
 <p align="center">

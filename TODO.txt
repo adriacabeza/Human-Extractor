@@ -1,0 +1,4 @@
+Try the --all option to get the output nodes and then convert it to tensorflow js.
+```saved_model_cli show -h --dir /generator --all```
+Try inference with the model.
+Make git lfs to upload model. 

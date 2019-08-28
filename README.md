@@ -30,6 +30,10 @@ After 200 epochs of 3035 images this are some of the results:
 |   ![](docs/output_5.png)    |
 |   ![](docs/output_6.png)    |
 |   ![](docs/output_4.png)    |
+|   ![](docs/output_7.png)    |
+|   ![](docs/output_8.png)    |
+|   ![](docs/output_9.png)    |
+|   ![](docs/output_10.png)    |
 
 
 ## Prerequisites
