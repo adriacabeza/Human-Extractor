@@ -35,6 +35,7 @@ After 200 epochs of 3035 images this are some of the results:
 |   ![](docs/output_9.png)    |
 |   ![](docs/output_10.png)    |
 
+Also here you have the **[saved_model](./generator_3)**
 
 ## Prerequisites
 - To install all the requirements please use the requirements.txt

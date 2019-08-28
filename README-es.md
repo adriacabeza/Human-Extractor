@@ -35,7 +35,7 @@ Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha
 |   ![](docs/output_4.png)    |
 |   ![](docs/output_10.png)    |
 
-
+Además aquí tienes el **[saved model](./generator_3)**.
 
 ## Requisitos
 - Para instalar los requisitos necesarios porfavor usa el archivo requirements.txt
