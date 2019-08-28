@@ -43,7 +43,7 @@
 // ctx.fillStyle = "black";
 // ctx.fill();
 
-  const MODEL_URL = 'output2/model.json';
+  const MODEL_URL = 'output/model.json';
   
   function thisFileUpload() {
     document.getElementById("file").click(); 
@@ -95,11 +95,14 @@
       // Cast to float32
       //file = tf.cast(file,'float32')
       file = file.asType('float32')
+      file= file.div(127.5)
+      file = file.sub(1)
       // Predict
       console.log("Let's predict")
       result= model.predict(file)
       console.log("Done")
       result = result.reshape([512,512,3])
+      
       console.log(result);
       const b = tf.scalar(0.5);
       result = result.mul(b);

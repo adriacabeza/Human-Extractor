@@ -92,4 +92,10 @@ python3 -m model.train --dataset PATH_TO_DATASET
 
 El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante depués de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc.
 
+## Demo
 
+Además quería aprender acerca de **tensorflowjs** así que he creado una página web simple para insertar el modelo y hacerlo más simple de provar. Haz click en el [link](adriacabeza.github.io/Human-Extractor) para provarlo. 
+
+<p align="center">
+<img src="docs/website.png">
+</p>
