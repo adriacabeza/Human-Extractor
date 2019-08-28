@@ -12,20 +12,22 @@ La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix*
 
 En lo primero que hubiera pensado para atacar este problema hubiera sido provar otras maneras y arquitecturas como **Mask RCNN** o incluso **Salency Maps** pero quería provar el approach de la pix2pix.
 
-El framework que he escogido era Tensorflow 2.0 ya que quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
+El framework que he escogido era Tensorflow 2.0 ya su tutorial estaba en esa versión y quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
 
 Nótese que pese a que el proyecto se ha realizado principalmente en Colab también está preparado para runnearlo en local con sus diferentes ficheros y módulos, no obstante aún no lo he podido probar. 
 
 
 ## Resultados
 
-Después de 150 epochs de 3035 imágenes.
+Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha ido muy bien últimamente):
 
 | Resultados |
 |--------|
 |   ![](docs/output.png)     |
 |   ![](docs/output_1.png)    |
 |   ![](docs/output_2.png)    |
+|   ![](docs/output_5.png)    |
+|   ![](docs/output_6.png)    |
 |   ![](docs/output_3.png)    |
 |   ![](docs/output_4.png)    |
 
@@ -53,6 +55,10 @@ Sus partes principales son:
   <img src="docs/U-net.png">
 </p>
 
+```
+
+
+``
 - **Discriminador Patch-GAN**: en este discriminador en vez de coger las imágenes y clasificarlas en verdaderas o falsas, se clasifican individualmente diferentes trozos de la imagen así se refuerza el objetivo de conseguir detalles mucho más nítidos. Además es más rápido de clasificar toda una imágen ya que solo tiene que clasificar pequeños trozos y eso significa menos parámetros.
 
 <p align="center">
@@ -79,4 +85,6 @@ python3 -m model.train --dataset PATH_TO_DATASET
 
 ## Mejoras
 
-El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante depués de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc. 
+El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante depués de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc.
+
+

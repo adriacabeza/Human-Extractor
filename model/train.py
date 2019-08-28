@@ -10,7 +10,7 @@ from model.dataset import *
 from model.model import *
 from model.utils import generate_images
 
-# ONCE YOU HAVE AN IDEA CHECK https://github.com/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/pix2pix.ipynb
+# Code made with the help of:  https://github.com/tensorflow/docs/blob/master/site/en/r2/tutorials/generative/pix2pix.ipynb
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=100)
@@ -42,7 +42,7 @@ train_dataset = tf.data.Dataset.list_files(args.dataset+'train/*.jpg')
 train_dataset = train_dataset.shuffle(BUFFER_SIZE)
 train_dataset = train_dataset.map(load_image,
                                   num_parallel_calls=tf.data.experimental.AUTOTUNE)
-train_dataset = train_dataset.batch(1)
+train_dataset = train_dataset.batch(64)
 
 test_dataset = tf.data.Dataset.list_files(args.dataset+'test/*.jpg')
 # shuffling so that for every epoch a different image is generated
@@ -71,8 +71,6 @@ def train_step(input_image, target):
 
 
 def train(dataset, epochs):
-    # TENSORBOARD
-    # tf.contrib.summary.create_file_writer('log')
     for epoch in range(epochs):
         start = time.time()
 
