@@ -78,7 +78,7 @@ Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data pr
 
 Además, después de runnear el model, obtendrás una imagen con el fondo blanco, si necesitas la imagen pero con transparencia, usa [este script](./dataset/delete_white.py).
 
-```python
+```bash
 python3 delete_white.py --image image.jpg
 ```
 
