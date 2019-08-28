@@ -76,6 +76,12 @@ python3 split_dataset.py
 ```
 Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data preparada. Recuerda que si usas Colab tienes que subir las carpetas de alguna forma y poner su ruta en la variable *PATH*.
 
+Además, después de runnear el model, obtendrás una imagen con el fondo blanco, si necesitas la imagen pero con transparencia, usa [este script](./dataset/delete_white.py).
+
+```python
+python3 delete_white.py --image image.jpg
+```
+
 ## Ejecutarlo
 
 ```bash
