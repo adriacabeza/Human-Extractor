@@ -1,7 +1,6 @@
 [![HitCount](http://hits.dwyl.io/adriacabeza/Human-Extractor.svg)](http://hits.dwyl.io/adriacabeza/Human-Extractor)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/adriacabeza/Human-Extractor)
 [![GitHub stars](https://img.shields.io/github/stars/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Human-Extractor/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/adriacabeza/Unnamed.svg)](https://GitHub.com/adriacabeza/Human-Extractor/network/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Human-Extractor.svg)](https://github.com/adriacabeza/Human-Extractor)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
