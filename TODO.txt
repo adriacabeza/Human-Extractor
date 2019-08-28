@@ -1,1 +1,1 @@
-Re-train with 200 epochs, convert to tensorflow js, upload with git lfs the main model and its json version 
+Re-train with 200 epochs, convert to tensorflow js, upload with git lfs the main model and its json version. Change website preview.
