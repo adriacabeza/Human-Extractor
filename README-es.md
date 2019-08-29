@@ -3,18 +3,19 @@
 [![GitHub stars](https://img.shields.io/github/stars/adriacabeza/Human-Extractor.svg)](https://GitHub.com/adriacabeza/Human-Extractor/stargazers/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Human-Extractor.svg)](https://github.com/adriacabeza/Human-Extractor)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/adriacabeza/Human-Extractor/]
+
 
 
 # HUMAN EXTRACTOR
 
-La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix**. El programa coge como input una imagen con una persona y es capaz de outputear la misma imagen con solo la persona. Esto además de automatizar un proceso en el que actualmente tiene que intervenir una persona, puede ayudar a gente que no tenga Photoshop (o otros) o que no sepa usarlo podrá coger sus imágenes y recortarlas con facilidad.
+La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix**. El programa coge como input una imagen con una persona y es capaz de outputear la misma imagen con solo la persona. Esto además de automatizar un proceso en el que actualmente tiene que intervenir una persona, puede ayudar a gente que no tenga Photoshop (o programas parecidos) o que no sepa usarlo podrá coger sus imágenes y recortarlas con facilidad.
 
 En lo primero que hubiera pensado para atacar este problema hubiera sido provar otras maneras y arquitecturas como **Mask RCNN** o incluso **Salency Maps** pero quería provar el approach de la pix2pix.
 
 El framework que he escogido era Tensorflow 2.0 ya su tutorial estaba en esa versión y quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
 
 Nótese que pese a que el proyecto se ha realizado principalmente en Colab también está preparado para runnearlo en local con sus diferentes ficheros y módulos, no obstante aún no lo he podido probar. 
-
 
 ## Resultados
 
