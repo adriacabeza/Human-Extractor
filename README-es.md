@@ -3,18 +3,19 @@
 [![GitHub stars](https://img.shields.io/github/stars/adriacabeza/Human-Extractor.svg)](https://GitHub.com/adriacabeza/Human-Extractor/stargazers/)
 [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/adriacabeza/Human-Extractor.svg)](https://github.com/adriacabeza/Human-Extractor)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/adriacabeza/Human-Extractor/)
+
 
 
 # HUMAN EXTRACTOR
 
-La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix**. El programa coge como input una imagen con una persona y es capaz de outputear la misma imagen con solo la persona. Esto además de automatizar un proceso en el que actualmente tiene que intervenir una persona, puede ayudar a gente que no tenga Photoshop (o otros) o que no sepa usarlo podrá coger sus imágenes y recortarlas con facilidad.
+La finalidad del proyecto es poder **segmentar a los humanos usando una pix2pix**. El programa coge como input una imagen con una persona y es capaz de outputear la misma imagen con solo la persona. Esto además de automatizar un proceso en el que actualmente tiene que intervenir una persona, puede ayudar a gente que no tenga Photoshop (o programas parecidos) o que no sepa usarlo podrá coger sus imágenes y recortarlas con facilidad.
 
 En lo primero que hubiera pensado para atacar este problema hubiera sido provar otras maneras y arquitecturas como **Mask RCNN** o incluso **Salency Maps** pero quería provar el approach de la pix2pix.
 
 El framework que he escogido era Tensorflow 2.0 ya su tutorial estaba en esa versión y quería aprender acerca de su nueva versión y de su execución eager (Tensorflow sin tener que construir grafos!). Además dado que usaré Google Colab (no todo el mundo tiene GPUs increíbles en su casa), va a ser más fácil si uso Tensorflow.
 
 Nótese que pese a que el proyecto se ha realizado principalmente en Colab también está preparado para runnearlo en local con sus diferentes ficheros y módulos, no obstante aún no lo he podido probar. 
-
 
 ## Resultados
 
@@ -37,11 +38,11 @@ Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha
 Además aquí tienes el **[saved model](./saved_model)**.
 
 ## Requisitos
-- Para instalar los requisitos necesarios porfavor usa el archivo requirements.txt
+- Para instalar los requisitos necesarios por favor usa el archivo requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
-- Sí prefieres usar Google Collab, usa este **[link](Human_extractor.ipynb)**. Recuerda que tienes que preparar el dataset previamente. 
+- Si prefieres usar Google Collab, usa este **[link](Human_extractor.ipynb)**. Recuerda que tienes que preparar el dataset previamente. 
 
 ## Arquitectura pix2pix
 
@@ -52,13 +53,13 @@ Sus partes principales son:
 
 - **Generador U-NET**: el generador de la pix2pix se parece mucho a un **autoencoder**. Coge la imagen que tiene que ser traducida, la comprime a un espacio de menos dimensiones llamado **Cuello de Botella** y luego aprende a hacer upsampling para conseguir la imagen deseada como output. 
 
-  Además también tiene ciertos parecidos con una ResNet en la manera en como la información de capas previas es introducida a las siguientes usando las llamadas **skip connections**. En esta arquitectura disponemos de skip connections que salen de la mitat encoder de la red y van a la otra mitad decoder. Esto nos sirve para prevenir que perdamos información en el cuello de botella.
+  Además también tiene ciertos parecidos con una ResNet en la manera en como la información de capas previas es introducida a las siguientes usando las llamadas **skip connections**. En esta arquitectura disponemos de skip connections que salen de la mitad encoder de la red y van a la otra mitad decoder. Esto nos sirve para prevenir que perdamos información en el cuello de botella.
 
 <p align="center">
   <img src="docs/U-net.png">
 </p>
 
-- **Discriminador Patch-GAN**: en este discriminador en vez de coger las imágenes y clasificarlas en verdaderas o falsas, se clasifican individualmente diferentes trozos de la imagen así se refuerza el objetivo de conseguir detalles mucho más nítidos. Además es más rápido de clasificar toda una imágen ya que solo tiene que clasificar pequeños trozos y eso significa menos parámetros.
+- **Discriminador Patch-GAN**: en este discriminador en vez de coger las imágenes y clasificarlas en verdaderas o falsas, se clasifican individualmente diferentes trozos de la imagen así se refuerza el objetivo de conseguir detalles mucho más nítidos. Además es más rápido de clasificar toda una imagen ya que solo tiene que clasificar pequeños trozos y eso significa menos parámetros.
 
 <p align="center">
   <img src="docs/patch_gan.png">
@@ -68,7 +69,7 @@ Sus partes principales son:
 ## Dataset
 Se ha usado Supervisely Person como dataset. Más información [en el link](https://hackernoon.com/releasing-supervisely-person-dataset-for-teaching-machines-to-segment-humans-1f1fc1f28469). Posteriormente se ha preprocesado para que cada imagen tenga los pares de segmentado y no segmentado 
 
-Para hacerlo podemos usar clonar el repositorio y poner nuestras imágenes normales en la carpaeta ```data/original``` y nuestras imágenes segmentadas en ```data/segmentated```. Y luego escribir:
+Para hacerlo podemos usar clonar el repositorio y poner nuestras imágenes normales en la carpeta ```data/original``` y nuestras imágenes segmentadas en ```data/segmentated```. Y luego escribir:
 
 ```
 python3 dataset/combine_images.py  
@@ -76,7 +77,7 @@ python3 split_dataset.py
 ```
 Después de esto tendremos dos carpetas, ```train``` y ```test``` con la data preparada. Recuerda que si usas Colab tienes que subir las carpetas de alguna forma y poner su ruta en la variable *PATH*.
 
-Además, después de runnear el model, obtendrás una imagen con el fondo blanco, si necesitas la imagen pero con transparencia, usa [este script](./dataset/delete_white.py).
+Además, después de runnear el modelo, obtendrás una imagen con el fondo blanco, si necesitas la imagen pero con transparencia, usa [este script](./dataset/delete_white.py).
 
 ```bash
 python3 delete_white.py --image image.jpg
@@ -90,11 +91,11 @@ python3 -m model.train --dataset PATH_TO_DATASET
 
 ## Mejoras
 
-El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante depués de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc.
+El dataset es bastante pequeño así que podrían verse mejoras si se incrementase su tamaño. Además, las mejores de pix2pixHD hechos por Nvidia también se podrían aplicar para sacar mejores resultados com más definicion y *sharpness*. De hecho, mi primera opción era intentar implementarla en Tensorflow ya que la original está hecha en Pytorch, no obstante después de leer el paper decidí que era demasiado complicada y demasiado costosa computacionalmente: 3 discriminadores diferentes con diferentes tamaños, una feature matching loss que usa los features de cada uno de los discriminadores, dos generadores diferentes que tienen que ser entrenados por separado y luego fine-tuned juntos, etc.
 
 ## Demo
 
-Además quería aprender acerca de **tensorflowjs** así que he creado una página web simple para insertar el modelo y hacerlo más simple de provar. Haz click en el [link](https://adriacabeza.github.io/Human-Extractor/) para provarlo. 
+Además quería aprender acerca de **tensorflowjs** así que he creado una página web simple para insertar el modelo y hacerlo más simple de probar. Haz click en el [link](https://adriacabeza.github.io/Human-Extractor/) para probarlo. 
 
 <p align="center">
 <img src="docs/website.png">
