@@ -35,7 +35,7 @@ Después de 200 epochs de 3035 imágenes (no hice más porque Google Colab no ha
 |   ![](docs/output_4.png)    |
 |   ![](docs/output_10.png)    |
 
-Además aquí tienes el **[saved model](./saved_model)**.
+Además aquí tienes el **[saved model y el .h5](./generator_3/saved_model)** y el [**tensorflowjs** convertido](./output).
 
 ## Requisitos
 - Para instalar los requisitos necesarios por favor usa el archivo requirements.txt
